@@ -1,0 +1,84 @@
+### Creating new employee
+POST http://localhost:3000/employees
+Content-Type: application/json
+
+{
+  "name": "John Smith",
+  "joinDate": "2023/01.01",
+  "baseSalary": 50000,
+  "type": "employee"
+}
+
+
+### Creating new manager with subordinates
+POST http://localhost:3000/employees
+Content-Type: application/json
+
+{
+  "name": "Manager Andrii",
+  "joinDate": "2023-01-01",
+  "baseSalary": 60000,
+  "type": "manager",
+  "subordinatesIds": [1]
+}
+
+
+### Creating new salesperson with subordinates
+POST http://localhost:3000/employees
+Content-Type: application/json
+
+
+{
+  "name": "Ann Salesperson",
+  "joinDate": "2023-01-01",
+  "baseSalary": 45000,
+  "type": "salesperson",
+  "subordinatesIds": [9]
+}
+
+
+### Trying to create new salesperson with invalid supervisor (employee)
+POST http://localhost:3000/employees
+Content-Type: application/json
+
+{
+  "name": "Ann Salesperson",
+  "joinDate": "2023-01-01",
+  "baseSalary": 60000,
+  "type": "salesperson",
+  "supervisorId": 1,
+  "subordinatesIds": [1]
+}
+
+
+### Creating new salesperson
+POST http://localhost:3000/employees
+Content-Type: application/json
+
+
+{
+  "name": "Ann Salesperson",
+  "joinDate": "2023-01-01",
+  "baseSalary": 45000,
+  "type": "salesperson",
+  "subordinatesIds": [2]
+}
+
+
+### Add supervisor
+POST http://localhost:3000/employees/13/supervisor/4
+
+### Delete supervisor
+DELETE http://localhost:3000/employees/13/supervisor
+
+### Change supervisor
+PUT http://localhost:3000/employees/13/supervisor/5
+
+### Getting all employees
+GET http://localhost:3000/employees
+
+### Delete employee by id
+DELETE http://localhost:3000/employees/5
+
+### Find employee By id
+GET http://localhost:3000/employees/5

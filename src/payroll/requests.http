@@ -1,0 +1,5 @@
+### Get employee salary
+GET http://localhost:3000/payroll/1?currentDate=2025-08-14
+
+### Get total salaries
+GET http://localhost:3000/payroll/total?currentDate=2025-08-14
